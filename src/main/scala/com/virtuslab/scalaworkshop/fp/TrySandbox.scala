@@ -1,17 +1,18 @@
 package com.virtuslab.scalaworkshop.fp
 
-import java.time.LocalDate
+import java.time.{ LocalDate, ZonedDateTime }
 
 import scala.util.Try
 
 class TrySandbox {
 
-  //@throws ???
-  def bar(input: String): String = ???
+  case class DateToTimeInterval(
+    startDate: LocalDate,
+    endTime: ZonedDateTime
+  )
 
-  def combine(input1: String, input2: String): Try[Int] = {
-    // TODO: ...
-    LocalDate.parse(???)
+  def buildInterval(startDateStr: String, endTimeStr: String): Try[DateToTimeInterval] = {
+    // TODO: Implement this method using LocalDate.parse, ZonedDateTime.parse and a for-comprehension.
     ???
   }
 }
