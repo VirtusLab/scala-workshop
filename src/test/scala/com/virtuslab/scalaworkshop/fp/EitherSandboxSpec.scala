@@ -3,13 +3,12 @@ package com.virtuslab.scalaworkshop.fp
 import org.scalatest.{ Matchers, WordSpec }
 
 class EitherSandboxSpec extends WordSpec with Matchers {
-  val eitherSandbox = new EitherSandbox
 
-  val className = classOf[EitherSandbox].getSimpleName
-
-  s"$className#parse" should {
+  "EitherSandbox#parse" should {
     "return" in {
-      eitherSandbox.combine("foo", "bar") shouldBe Some(1)
+      EitherSandbox.getCompanyTaxId(Map("companyName" -> "Amazon")) shouldBe Right(789123)
     }
+
+    // TODO add more tests!
   }
 }

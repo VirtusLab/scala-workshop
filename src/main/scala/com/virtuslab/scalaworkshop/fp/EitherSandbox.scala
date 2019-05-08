@@ -1,14 +1,14 @@
 package com.virtuslab.scalaworkshop.fp
 
-class EitherSandbox {
+case class Company(name: String, taxId: Int)
 
-  def bar(input: String): Option[String] = ???
-  def foo(input: String): Either[Exception, Int] = ???
+object EitherSandbox {
 
-  // lista ludzikow - metodka ktora wyciaga przy uzyciu Either?
-  // potem birth date?
-  def combine(input1: String, input2: String): Either[Exception, Int] = {
+  def getCompanyTaxId(params: Map[String, String]): Either[Exception, Int] = {
     // TODO: try combining Option and Either in a single `for` comprehension...
-    ???
+    for {
+      name <- params.get("companyName").toRight(new Exception("param not found"))
+      company <- DummyDatabase.getCompanyByName(name)
+    } yield company.taxId
   }
 }
