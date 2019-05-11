@@ -13,7 +13,6 @@ object ScalaFeel {
       new Car("BMW", "1", BigDecimal("2.0", MathContext.DECIMAL32), "C"),
       new Car("Ford", "Focus", BigDecimal("1.8", MathContext.DECIMAL32), "C")
     )
-    val carsWithlargerEngine = cars.groupBy(_.clazz).getOrElse("C", Nil).filter(_.engine > BigDecimal("1.5", MathContext.DECIMAL32)).distinct
-    println(s"Cars with larger engine:\n\t${carsWithlargerEngine.mkString("\n\t")}")
+    //
   }
 }
