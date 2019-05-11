@@ -16,6 +16,17 @@ object ForLoopTranslationSandbox {
   val r3 = Restaurant("Mama's")
   val restaurants: Seq[Restaurant] = Seq(r1, r2, r3)
 
+  def getAllScoresUsingFor(rates: Map[(Person, Restaurant), Seq[Int]]): Seq[Int] = for {
+    person <- people
+    restaurant <- restaurants
+    rate <- rates.getOrElse((person, restaurant), Seq.empty)
+  } yield rate
+
+  def getAllScoresWithoutFor(rates: Map[(Person, Restaurant), Seq[Int]]): Seq[Int] = {
+    // TODO write an equivalent of getAllScoresUsingFor using flatMap, map
+    ???
+  }
+
   // let's assume every person adds some score every time he/she visits a given restaurant
   def getHighRatesOfAdultsUsingFor(rates: Map[(Person, Restaurant), Seq[Int]]): Seq[(Person, Restaurant, Int)] = for {
     person <- people if person.age >= 18
