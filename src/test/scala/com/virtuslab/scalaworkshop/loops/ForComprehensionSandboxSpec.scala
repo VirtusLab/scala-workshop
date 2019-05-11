@@ -16,6 +16,13 @@ class ForComprehensionSandboxSpec extends WordSpec with Matchers {
   )
 
   private val expectedFilteredRates = Seq((p1, r3, 9), (p3, r1, 8), (p3, r2, 9))
+  private val adults = Seq(p1, p3)
+
+  "getAdultsUsingForExpression" should {
+    "return proper people" in {
+      getAdultsUsingForExpression() shouldBe adults
+    }
+  }
 
   "getHighRatesOfAdultsUsingForExpression" should {
     "find proper rates" in {
