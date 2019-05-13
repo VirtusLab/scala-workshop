@@ -9,7 +9,15 @@ class CollectionSpec2 extends WordSpec with Matchers {
     "cube every element" in {
 
       def cubeList(list: List[Int]): List[Int] = {
-        ???
+        // solution
+
+        list.map(x => x * x * x )
+
+        // foldLeft solution
+
+//        list.foldLeft(List[Int]()) { (acc, e) =>
+//          acc :+ e * e * e
+//        }
       }
 
 
@@ -24,7 +32,16 @@ class CollectionSpec2 extends WordSpec with Matchers {
     "concatenate all letters" in {
 
       def concatenate(list: List[Char]): String = {
-        ???
+
+        // solution
+
+        list.mkString
+
+        // foldLeft solution
+
+//        list.foldLeft("") { (acc, e) =>
+//          acc + e
+//        }
       }
 
 
@@ -38,7 +55,16 @@ class CollectionSpec2 extends WordSpec with Matchers {
     "sum even" in {
 
       def sumEven(list: List[Int]): Int = {
-        ???
+
+        // solution
+
+        list.filter(_ % 2 == 0).sum
+
+        // foldLeft solution
+
+//        list.foldLeft(0) { (a, b) =>
+//          if(b % 2 == 0) a + b else a
+//        }
       }
 
 
@@ -52,7 +78,17 @@ class CollectionSpec2 extends WordSpec with Matchers {
     "find longest string in map" in {
 
       def findLongest(list: Map[Int, String]): Int = {
-        ???
+
+        // solution
+
+        list.maxBy(_._2.length)._1
+
+        // foldLeft solution
+
+//        list.foldLeft((-1, "")) { (acc, e) =>
+//          if(acc._2.length > e._2.length) acc else e
+//        }._1
+
       }
 
 
