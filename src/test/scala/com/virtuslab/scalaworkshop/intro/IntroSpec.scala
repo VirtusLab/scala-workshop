@@ -2,6 +2,8 @@ package com.virtuslab.scalaworkshop.intro
 
 import org.scalatest.{Matchers, WordSpec}
 
+import scala.util.control.NonFatal
+
 class IntroSpec extends WordSpec with Matchers {
 
 
@@ -17,7 +19,7 @@ class IntroSpec extends WordSpec with Matchers {
     "immutability" in {
       val num = 5
 
-//      num = num + 3
+      //      num = num + 3
     }
 
     "have everything as expression" in {
@@ -42,7 +44,7 @@ class IntroSpec extends WordSpec with Matchers {
         val value = throw new IllegalStateException()
         fail("Exception should have been thrown")
       } catch {
-        case ex => println("I am done")
+        case NonFatal(ex) => println("I am done")
       }
     }
 
