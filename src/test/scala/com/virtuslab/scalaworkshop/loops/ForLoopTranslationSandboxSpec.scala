@@ -18,7 +18,6 @@ class ForLoopTranslationSandboxSpec extends WordSpec with Matchers {
   private val ratesMap = ratesSeq.toMap
 
   private val allScores = ratesSeq.flatMap { case (_ ,list) => list }
-  private val expectedFilteredRates = Seq((p1, r3, 9), (p3, r1, 8), (p3, r2, 9))
 
   "getAllScoresUsingFor" should {
     "find proper scores" in {
@@ -29,18 +28,6 @@ class ForLoopTranslationSandboxSpec extends WordSpec with Matchers {
   "getAllScoresWithoutFor" should {
     "find proper scores" in {
       getAllScoresWithoutFor(ratesMap) shouldBe allScores
-    }
-  }
-
-  "getHighRatesOfAdultsUsingFor" should {
-    "find proper rates" in {
-      getHighRatesOfAdultsUsingFor(ratesMap) shouldBe expectedFilteredRates
-    }
-  }
-
-  "getHighRatesOfAdultsWithoutFor" should {
-    "find proper rates" in {
-      getHighRatesOfAdultsWithoutFor(ratesMap) shouldBe expectedFilteredRates
     }
   }
 }

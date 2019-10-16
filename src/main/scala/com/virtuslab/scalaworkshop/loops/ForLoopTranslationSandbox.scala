@@ -23,19 +23,7 @@ object ForLoopTranslationSandbox {
   } yield rate
 
   def getAllScoresWithoutFor(rates: Map[(Person, Restaurant), Seq[Int]]): Seq[Int] = {
-    // TODO write an equivalent of getAllScoresUsingFor using flatMap, map
-    ???
-  }
-
-  // let's assume every person adds some score every time he/she visits a given restaurant
-  def getHighRatesOfAdultsUsingFor(rates: Map[(Person, Restaurant), Seq[Int]]): Seq[(Person, Restaurant, Int)] = for {
-    person <- people if person.age >= 18
-    restaurant <- restaurants
-    rate <- rates.getOrElse((person, restaurant), Seq.empty) if rate >= 8
-  } yield (person, restaurant, rate)
-
-  def getHighRatesOfAdultsWithoutFor(rates: Map[(Person, Restaurant), Seq[Int]]): Seq[(Person, Restaurant, Int)] = {
-    // TODO write an equivalent of getHighRatesOfAdultsUsingFor using flatMap, map and filter (without if)
+    // TODO write an equivalent of getAllScoresUsingFor using flatMap
     ???
   }
 }

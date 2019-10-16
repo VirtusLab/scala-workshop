@@ -16,16 +16,18 @@ object ForComprehensionSandbox {
   val r3 = Restaurant("Mama's")
   val restaurants: Seq[Restaurant] = Seq(r1, r2, r3)
 
+  val restaurantsVisitedByPerson: Map[Person, Seq[Restaurant]] = Map(
+    p1 -> Seq(r1, r3), p2 -> Seq(r2), p3 -> Seq(r1)
+  )
+
   def getAdultsUsingForExpression(): Seq[Person] = {
     // TODO replace ??? with for-expression which returns all people where age is >= 18
     ???
   }
 
-  // let's assume every person adds some score every time he/she visits a given restaurant
-  def getHighRatesOfAdultsUsingForExpression(rates: Map[(Person, Restaurant), Seq[Int]]): Seq[(Person, Restaurant, Int)] = {
-    // TODO replace ??? with for-expression which returns all (person, restaurant, rate) where
-    // age is >= 18 and rate is >= 8
-    // hint: Map has getOrElse method where one can pass empty seq as a default value
+  def getRestaurantsVisitedByAdultsUsingForExpression(): Seq[Restaurant] = {
+    // TODO replace ??? with for-expression which returns all restaurants visited by adults
+    // please use 'distinct' method on collections to get read of the repeated entries
     ???
   }
 }

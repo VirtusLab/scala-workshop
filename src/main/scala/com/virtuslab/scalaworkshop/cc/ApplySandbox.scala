@@ -20,6 +20,7 @@ object ApplySandbox {
     ??? // Person(id)
   }
 
+  // apply method can be added to any object, even with a different name than a returned type
   def applyNextBirthday(person: Person): Person = {
     // TODO replace ??? with OneYearOlderPerson(person) and make it working
     ??? // OneYearOlderPerson(person)
