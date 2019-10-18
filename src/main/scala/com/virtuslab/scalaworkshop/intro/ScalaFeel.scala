@@ -11,6 +11,9 @@ object ScalaFeel {
       new Car("BMW", "1", BigDecimal("2.0"), "C"),
       new Car("Ford", "Focus", BigDecimal("1.8"), "C")
     )
-    //
+    // Task
+    // 1. Group cars by clazz & get list of cars in C class
+    // 2. Filter only cars with engine larger than 1.5L
+    // 3. Print resulting list separated by "\n\t"
   }
 }
